@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CodeGen</title>
+</head>
+<body>
+	<div class="wrapper">
+		<label for="charCount">Z ilu liter ma się składać hasło?</label>
+		<input type="number" min="1" required id="charCount" ></br>
+		<label for="">Ile wielkich liter ma zawierać hasło?</label>
+		<input type="range" min="0" max="10" value="0" list="tickmarks"></br>
+		<label for="">Ile cyfr ma zawierać hasło?</label>
+		<input type="range" min="0" max="10" value="0" list="tickmarks"></br>
+		<label for="">Ile znaków specjalnych ma zawierać hasło?</label>
+		<input type="range" min="0" max="10" value="0" list="tickmarks"></br></br>
+		<input type="submit">
+
+		<p id="password"></p>
+	</div>	
+
+<datalist id="tickmarks">
+</datalist>
+
+<script>
+
+const datalist = document.querySelector('datalist');
+const maxInput = parseFloat(document.querySelector('input[type="range"]').max);
+for (let i = 1; i <= maxInput; i++){
+	const option = document.createElement('option');
+	option.setAttribute("value", `${i}`);
+	datalist.appendChild(option);
+}
+
+
+
+
+</script>
+</body>
+</html>
